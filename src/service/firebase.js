@@ -49,9 +49,7 @@ export const signInWithGoogle = () => {
 export const logOut = () => {
   signOut(auth)
     .then(() => {
-      // Sign-out successful.
     })
     .catch((error) => {
-      // An error happened.
     });
 };
