@@ -11,7 +11,6 @@ import {
   orderBy,
   where,
 } from "firebase/firestore";
-import { async } from "@firebase/util";
 
 export const initGet = async (uid) => {
   console.log(uid);

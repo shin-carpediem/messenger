@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import dig from "object-dig";
 import { signInWithGoogle, logOut } from "../service/firebase";
 import { AuthContext } from "../providers/AuthProvider";

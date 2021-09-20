@@ -7,7 +7,7 @@ import {
   signOut,
 } from "firebase/auth";
 import "firebase/firestore";
-import { getFirestore } from 'firebase/firestore';
+import { getFirestore, enableIndexedDbPersistence } from "firebase/firestore";
 
 const firebaseConfig = {
   apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
@@ -22,8 +22,11 @@ const firebaseConfig = {
 
 export const app = initializeApp(firebaseConfig);
 export const db = getFirestore(app);
-const analytics = getAnalytics(app);
-const fireStore = getFirestore(app)
+enableIndexedDbPersistence(db);
+// const analytics =
+getAnalytics(app);
+// const fireStore =
+getFirestore(app);
 
 const provider = new GoogleAuthProvider();
 
@@ -48,8 +51,6 @@ export const signInWithGoogle = () => {
 
 export const logOut = () => {
   signOut(auth)
-    .then(() => {
-    })
-    .catch((error) => {
-    });
+    .then(() => {})
+    .catch((error) => {});
 };
